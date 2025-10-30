@@ -4,7 +4,6 @@
 
 #include <libhat/scanner.hpp>
 #include <libhat/signature.hpp>
-#include "vcproxy/vcruntime.hpp"
 #include "utils/detour.hpp"
 #include "sdk/oreui.hpp"
 
@@ -45,9 +44,7 @@ BOOL WINAPI DllMain(HMODULE /* module */, DWORD reason,  LPVOID /* reserved */)
     {
         case DLL_PROCESS_ATTACH:
         {
-            proxy::init();
             MH_Initialize();
-
             hat::scan_result isTrialAddr = hat::find_pattern(gDoRegisterSig, ".text");
             gDoRegisterDetour = std::make_unique<detour>(isTrialAddr.get(), &registerToggleObservers);
             gDoRegisterDetour->enable();
@@ -58,9 +55,7 @@ BOOL WINAPI DllMain(HMODULE /* module */, DWORD reason,  LPVOID /* reserved */)
         {
             gDoRegisterDetour->disable();
             gDoRegisterDetour.reset();
-
             MH_Uninitialize();
-            proxy::shutdown();
 
             break;
         }

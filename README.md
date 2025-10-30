@@ -4,16 +4,18 @@ Simple Mod for Minecraft: Bedrock Edition which prevents new (oreui) from being 
 
 Download the DLL for your Minecraft version from the Releases page.
 
-Rename the file to vcruntime140_1.dll.
+Download [ModLoader](https://github.com/alteik/ModLoader) from my github profile.
 
-Place it in your Minecraft installation folder (the same directory as Minecraft.Windows.exe).
+Setup it (instructions can be found on ModLoader github page)
+
+Place mod in C:\Users\YOUR_USER\AppData\Roaming\Minecraft Bedrock\mods
+
+note: if folder doesnt exists, start mc once for ModLoader to create it
 
 Launch the game — it should use old ui now.
 
 That’s it! No extra setup required.
 
 💡 Credits
-
-@pr701 — original proxy project the tool is based on.
 
 @QYCottage - original ore ui disable method for mc versions above 1.21.100
