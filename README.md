@@ -14,8 +14,6 @@ That’s it! No extra setup required.
 
 💡 Credits
 
-@pr701
- — original proxy project the tool is based on.
- 
-@QYCottage
- - original ore ui disable method for mc versions above 1.21.100
+@pr701 — original proxy project the tool is based on.
+
+@QYCottage - original ore ui disable method for mc versions above 1.21.100
